@@ -12257,8 +12257,8 @@ section {
 }
 .nav-hero .hero .hero-content h1, .nav-hero .hero .hero-content .h1 {
   font-size: 54px;
-  text-align: center;
-  padding: 0 60px;
+  text-align: left;
+  padding-right: 440px;
 }
 @media (max-width: 992px) {
   .nav-hero .hero .hero-content h1, .nav-hero .hero .hero-content .h1 {
@@ -12274,8 +12274,8 @@ section {
 }
 .nav-hero .hero .hero-content p {
   font-size: 17px;
-  text-align: center;
-  padding: 0 190px;
+  text-align: left;
+  padding-right: 480px;
 }
 @media (max-width: 992px) {
   .nav-hero .hero .hero-content p {
@@ -12283,11 +12283,42 @@ section {
     padding: 0 50px;
   }
 }
+.nav-hero .hero .hero-img {
+  position: absolute;
+  width: 65%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -3;
+  top: 0;
+  right: 0;
+}
+.nav-hero .hero .left-overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: -3;
+  top: 0;
+  left: 0;
+  background: linear-gradient(90deg, #202021 0, #202021 50%, rgba(8, 8, 8, 0) 90%, rgba(8, 8, 8, 0) 100%);
+  opacity: 1;
+  filter: brightness(50%);
+}
+.nav-hero .hero .circle {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  z-index: -3;
+  top: -150px;
+  left: -150px;
+  border: 7px solid #85b449;
+  border-radius: 50%;
+  filter: opacity(0.2);
+}
 .nav-hero .features {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 2px;
-  background-color: #fff;
+  gap: 2rem;
+  margin-top: -3rem;
 }
 @media (max-width: 992px) {
   .nav-hero .features {
@@ -12301,7 +12332,9 @@ section {
 }
 .nav-hero .features div {
   padding: 2rem;
-  background-color: #e7f5d4;
+  background-color: #ffffff;
+  border-radius: 20px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
   text-align: center;
 }
 .nav-hero .features div i {
@@ -12315,15 +12348,6 @@ section {
 }
 .nav-hero .features div p {
   font-size: 0.9rem;
-}
-.nav-hero .hero-img {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  z-index: -3;
-  filter: brightness(30%);
-  top: 0;
 }
 
 .problems .problems-row {
