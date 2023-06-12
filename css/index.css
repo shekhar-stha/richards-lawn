@@ -748,7 +748,7 @@ progress {
 }
 @media (min-width: 768px) {
   .container-md, .container-sm, .container {
-    max-width: 720px;
+    max-width: 750px;
   }
 }
 @media (min-width: 992px) {
@@ -12034,6 +12034,10 @@ body {
   background-color: #f8f8f8;
 }
 
+section {
+  overflow: hidden;
+}
+
 .slick-dots {
   display: flex !important;
   justify-content: center;
@@ -12280,7 +12284,7 @@ section {
 @media (max-width: 992px) {
   .nav-hero .hero .hero-content p {
     font-size: 17px;
-    padding: 0 50px;
+    padding-right: 10px;
   }
 }
 .nav-hero .hero .hero-img {
@@ -12292,16 +12296,43 @@ section {
   top: 0;
   right: 0;
 }
+@media (max-width: 768px) {
+  .nav-hero .hero .hero-img {
+    width: 100%;
+    right: 0;
+    filter: brightness(40%);
+  }
+}
+.nav-hero .hero .grass-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  z-index: -1;
+  filter: opacity(0.1);
+  border: none;
+}
+@media (max-width: 768px) {
+  .nav-hero .hero .grass-background {
+    display: none;
+  }
+}
 .nav-hero .hero .left-overlay {
   position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
   z-index: -3;
-  top: 0;
-  left: 0;
   background: linear-gradient(90deg, #202021 0, #202021 50%, rgba(8, 8, 8, 0) 90%, rgba(8, 8, 8, 0) 100%);
   opacity: 1;
   filter: brightness(50%);
+}
+@media (max-width: 768px) {
+  .nav-hero .hero .left-overlay {
+    background: linear-gradient(90deg, #202021 0, #202021 10%, rgba(8, 8, 8, 0) 90%, rgba(8, 8, 8, 0) 100%);
+  }
 }
 .nav-hero .hero .circle {
   position: absolute;
@@ -12352,16 +12383,52 @@ section {
 
 .problems .img-div {
   max-height: 450px;
+  height: auto;
   padding: 0rem 5rem 3rem 1rem;
+  position: relative;
+}
+@media (max-width: 992px) {
+  .problems .img-div {
+    padding: 0rem;
+  }
+}
+.problems .img-div::after {
+  content: "";
+  left: -35px;
+  bottom: 0px;
+  position: absolute;
+  height: 90%;
+  width: 90%;
+  border: 6px solid #85b449;
+  border-radius: 20px;
+  z-index: -1;
+}
+@media (max-width: 992px) {
+  .problems .img-div::after {
+    display: none;
+  }
 }
 .problems .img-div img {
-  height: 100%;
+  max-height: 400px;
+  height: auto;
   width: 100%;
   border-radius: 20px;
   object-fit: cover;
 }
+@media (max-width: 992px) {
+  .problems .img-div img {
+    max-height: 300px;
+    border-radius: 50% 20%/10% 40%;
+  }
+}
 .problems .info-div {
   padding-left: 3rem;
+}
+@media (max-width: 992px) {
+  .problems .info-div {
+    padding-left: 0rem;
+    margin-bottom: 2.5rem;
+  }
 }
 .problems .info-div .problems-points li {
   color: #525050;
@@ -12424,49 +12491,64 @@ section {
   position: relative;
   border-radius: 8px;
   cursor: pointer;
+  border-radius: 8px;
+  overflow: hidden;
 }
 .our-services .multiple-slides .service-div .slider-img-full {
+  position: absolute;
+  top: 0;
+  left: 0;
   height: 100%;
   width: 100%;
   object-fit: cover;
-  position: absolute;
+  animation: fade-in 0.4s ease-in-out;
   z-index: -1;
-  border-radius: 8px;
   filter: brightness(80%);
 }
 .our-services .multiple-slides .service-div .information {
   position: absolute;
   bottom: 0;
-  left: 0;
+  height: 20%;
   width: 100%;
-  background-color: rgba(200, 255, 200, 0.1);
-  padding: 10px 0;
+  background-color: rgba(25, 173, 25, 0.9);
+  padding: 10px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
   transition: background-color 0.3s ease-in-out;
 }
 .our-services .multiple-slides .service-div h4, .our-services .multiple-slides .service-div .h4 {
   margin-top: 0;
   color: #fcfef7;
   text-shadow: 2px 2px 12px rgba(0, 0, 0, 0.2);
-  background-color: #85b449;
-  margin-bottom: 2rem;
-  padding-left: 1.5rem;
-  padding: 0.3rem 1.5rem;
-  width: fit-content;
-  border-top-right-radius: 10px;
-  border-bottom-right-radius: 10px;
 }
 .our-services .multiple-slides .service-div p.hidden-information {
   display: none;
   padding: 0.3rem 1.5rem;
   color: #fcfef7;
   font-size: 15px;
+  text-align: center;
+}
+.our-services .multiple-slides .service-div p.hidden-information a {
+  display: block;
+  width: 50%;
+  margin: 0.5rem auto;
+}
+.our-services .multiple-slides .service-div:hover .information {
+  min-height: 60%;
+  height: auto;
+  bottom: 0;
+  padding: 1rem auto;
+  border-top-left-radius: 10%;
+  border-top-right-radius: 10%;
+}
+.our-services .multiple-slides .service-div:hover .slider-img-full {
+  transform: scale(1.1);
 }
 .our-services .multiple-slides .service-div:hover h4, .our-services .multiple-slides .service-div:hover .h4 {
   background-color: transparent;
   margin-bottom: 0;
-}
-.our-services .multiple-slides .service-div:hover .information {
-  background-color: rgba(25, 173, 25, 0.8);
 }
 .our-services .multiple-slides .service-div:hover p.hidden-information {
   display: block;
@@ -12495,10 +12577,33 @@ section {
 }
 .why-us .why-us-img img {
   width: 100%;
-  height: 15rem;
+  max-height: 20rem;
+  min-height: 18rem;
   object-fit: cover;
-  border-radius: 10% 30% 50% 70%;
+  border-radius: 50% 20%/10% 40%;
   filter: brightness(90%);
+}
+
+.cta-form .img-div {
+  padding-right: 2rem;
+  padding-top: 2rem;
+}
+.cta-form .img-div img {
+  width: 100%;
+  object-fit: cover;
+  height: 100%;
+  max-height: 33rem;
+  border-radius: 50% 20%/10% 40%;
+}
+@media (max-width: 992px) {
+  .cta-form .img-div img {
+    max-height: 25rem;
+  }
+}
+@media (max-width: 768px) {
+  .cta-form .img-div img {
+    max-height: 20rem;
+  }
 }
 
 /* Testimonial Card */
@@ -12509,16 +12614,17 @@ section {
   box-shadow: 0px 3px 20px rgba(0, 0, 0, 0.1);
   position: relative;
 }
-
 .testimonial-card .quote-1 {
   position: absolute;
-  font-size: 2rem;
+  font-size: 5rem;
   color: #e29821;
   top: 0px;
   left: 0;
+  z-index: 1;
+  filter: opacity(0.4);
 }
-
 .testimonial-card .quote-2 {
+  display: none;
   position: absolute;
   font-size: 2rem;
   bottom: 0px;
@@ -12526,13 +12632,17 @@ section {
   color: #e29821;
   transform: rotate(180deg);
 }
-
 .testimonial-card img {
   width: 75px;
   height: 75px;
   object-fit: cover;
+  z-index: 2;
 }
-
+.testimonial-card .ratings {
+  font-size: 0.85rem;
+  line-height: 24px;
+  color: #FF9529;
+}
 .how-it-works .how-it-works-row {
   display: grid;
   grid-template-columns: repeat(3, 1fr);

@@ -15,7 +15,7 @@ $info: #808080;
 
 $container-max-widths: (
     sm: 540px,
-    md: 720px,
+    md: 750px,
     lg: 960px,
     xl: 1180px,
     xxl: 1340px,
@@ -165,4 +165,8 @@ a {
 
 body {
     background-color: #f8f8f8;
+}
+
+section{
+    overflow: hidden;
 }

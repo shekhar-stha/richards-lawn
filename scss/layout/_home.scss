@@ -48,7 +48,7 @@
 
                     @media (max-width: 992px) {
                         font-size: 17px;
-                        padding: 0 50px;
+                        padding-right: 10px;
                     }
                 }
             }
@@ -61,21 +61,45 @@
                 z-index: -3;
                 top: 0;
                 right: 0;
+
+                @media (max-width: 768px) {
+                    width: 100%;
+                    right: 0;
+                    filter: brightness(40%);
+                }
+            }
+
+            .grass-background{
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 50%;
+                height: 100%;
+                z-index: -1;
+                filter: opacity(0.1);
+                border: none;
+                @media (max-width: 768px) {
+                    display: none;
+                }
+                
             }
 
             .left-overlay {
                 position: absolute;
+                top: 0;
+                left: 0;
                 width: 100%;
                 height: 100%;
                 z-index: -3;
-                top: 0;
-                left: 0;
                 background: linear-gradient(90deg, #202021 0, #202021 50%, rgba(8, 8, 8, 0) 90%, rgba(8, 8, 8, 0) 100%);
                 opacity: 1;
                 filter: brightness(50%);
+                @media (max-width: 768px) {
+                    background: linear-gradient(90deg, #202021 0, #202021 10%, rgba(8, 8, 8, 0) 90%, rgba(8, 8, 8, 0) 100%);
+                }
             }
 
-            .circle{
+            .circle {
                 position: absolute;
                 width: 300px;
                 height: 300px;
@@ -128,21 +152,52 @@
     }
 
     .problems {
-        .img-div{
+        .img-div {
             max-height: 450px;
+            height: auto;
             padding: 0rem 5rem 3rem 1rem;
-            img{
-                height: 100%;
+            position: relative;
+
+            @media (max-width: 992px) {
+                padding: 0rem;
+            }
+            &::after{
+                content: "";
+                left: -35px;
+                bottom: 0px;
+                position: absolute;
+                height: 90%;
+                width: 90%;
+                border: 6px solid $primary;
+                border-radius: 20px;
+                z-index: -1;
+
+                @media (max-width: 992px) {
+                    display: none;
+                }
+            }
+            img {
+                max-height: 400px;
+                height: auto;
                 width: 100%;
                 border-radius: 20px;
                 object-fit: cover;
+                @media (max-width: 992px) {
+                    max-height: 300px;
+                    border-radius: 50% 20% / 10% 40%;
+                }
             }
         }
 
-        .info-div{
+        .info-div {
             padding-left: 3rem;
+            @media (max-width: 992px) {
+                padding-left: 0rem;
+                margin-bottom: 2.5rem;
+            }
+
             .problems-points {
-                li{
+                li {
                     color: #525050;
                     font-size: 16px;
                     margin-bottom: 0.6rem;
@@ -174,14 +229,14 @@
             overflow: hidden;
             line-height: 0;
         }
-        
+
         .custom-shape-divider-bottom-1686548668 svg {
             position: relative;
             display: block;
             width: calc(162% + 1.3px);
             height: 62px;
         }
-        
+
         .custom-shape-divider-bottom-1686548668 .shape-fill {
             fill: #f8f8f8;
         }
@@ -195,14 +250,14 @@
             line-height: 0;
             transform: rotate(180deg);
         }
-        
+
         .custom-shape-divider-top-1686548731 svg {
             position: relative;
             display: block;
             width: calc(162% + 1.3px);
             height: 62px;
         }
-        
+
         .custom-shape-divider-top-1686548731 .shape-fill {
             fill: #f8f8f8;
         }
@@ -219,24 +274,32 @@
                 position: relative;
                 border-radius: 8px;
                 cursor: pointer;
+                border-radius: 8px;
+                overflow: hidden;
 
                 .slider-img-full {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
                     height: 100%;
                     width: 100%;
                     object-fit: cover;
-                    position: absolute;
+                    animation: fade-in 0.4s ease-in-out;
                     z-index: -1;
-                    border-radius: 8px;
                     filter: brightness(80%);
                 }
 
                 .information {
                     position: absolute;
                     bottom: 0;
-                    left: 0;
+                    height: 20%;
                     width: 100%;
-                    background-color: rgba(200, 255, 200, 0.1);
-                    padding: 10px 0;
+                    background-color: rgba(25, 173, 25, 0.9);
+                    padding: 10px 20px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    flex-direction: column;
                     transition: background-color 0.3s ease-in-out;
                 }
 
@@ -244,13 +307,6 @@
                     margin-top: 0;
                     color: $white;
                     text-shadow: 2px 2px 12px rgba(0, 0, 0, 0.2);
-                    background-color: $primary;
-                    margin-bottom: 2rem;
-                    padding-left: 1.5rem;
-                    padding: 0.3rem 1.5rem;
-                    width: fit-content;
-                    border-top-right-radius: 10px;
-                    border-bottom-right-radius: 10px;
                 }
 
                 p.hidden-information {
@@ -258,15 +314,31 @@
                     padding: 0.3rem 1.5rem;
                     color: $white;
                     font-size: 15px;
+                    text-align: center;
+
+                    a {
+                        display: block;
+                        width: 50%;
+                        margin: 0.5rem auto;
+                    }
+                }
+
+                &:hover .information {
+                    min-height: 60%;
+                    height: auto;
+                    bottom: 0;
+                    padding: 1rem auto;
+                    border-top-left-radius: 10%;
+                    border-top-right-radius: 10%;
+                }
+
+                &:hover .slider-img-full {
+                    transform: scale(1.1);
                 }
 
                 &:hover h4 {
                     background-color: transparent;
                     margin-bottom: 0;
-                }
-
-                &:hover .information {
-                    background-color: rgba(25, 173, 25, 0.8);
                 }
 
                 &:hover p.hidden-information {
@@ -302,10 +374,33 @@
 
             img {
                 width: 100%;
-                height: 15rem;
+                max-height: 20rem;
+                min-height: 18rem;
                 object-fit: cover;
-                border-radius: 10% 30% 50% 70%;
+                border-radius: 50% 20% / 10% 40%;
                 filter: brightness(90%);
+            }
+        }
+    }
+
+    .cta-form{
+        .img-div{
+            padding-right: 2rem;
+            padding-top: 2rem;
+            img{
+                width: 100%;
+                object-fit: cover;
+                height: 100%;
+                max-height: 33rem;
+                border-radius: 50% 20% / 10% 40%;
+
+                @media (max-width: 992px) {
+                    max-height: 25rem;
+                }
+
+                @media (max-width: 768px) {
+                    max-height: 20rem;
+                }
             }
         }
     }
@@ -319,31 +414,44 @@
         box-sizing: border-box;
         box-shadow: 0px 3px 20px rgba(0, 0, 0, 0.1);
         position: relative;
-    }
 
-    .testimonial-card .quote-1 {
-        position: absolute;
-        font-size: 2rem;
-        color: $secondary;
-        top: 0px;
-        left: 0;
-    }
+        .quote-1 {
+            position: absolute;
+            font-size: 5rem;
+            color: $secondary;
+            top: 0px;
+            left: 0;
+            z-index: 1;
+            filter: opacity(0.4);
 
-    .testimonial-card .quote-2 {
-        position: absolute;
-        font-size: 2rem;
-        bottom: 0px;
-        right: 0;
-        color: $secondary;
-        transform: rotate(180deg);
-    }
+        }
 
-    .testimonial-card img {
-        width: 75px;
-        height: 75px;
-        object-fit: cover;
-    }
+        .quote-2 {
+            display: none;
+            position: absolute;
+            font-size: 2rem;
+            bottom: 0px;
+            right: 0;
+            color: $secondary;
+            transform: rotate(180deg);
+        }
 
+        img {
+            width: 75px;
+            height: 75px;
+            object-fit: cover;
+            z-index: 2;
+        }
+
+        .ratings{
+            font-size: .85rem;
+            line-height: 24px;
+            color: #FF9529;
+            i{
+
+            }
+        }
+    }
 
     .how-it-works {
         .how-it-works-row {
