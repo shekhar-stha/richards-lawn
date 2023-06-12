@@ -19,6 +19,9 @@
     <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon-16x16.png">
     <link rel="manifest" href="img//site.webmanifest">
 
+    <!-- Scroll Animation -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
     <!-- Slick CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css"
         integrity="sha512-wR4oNhLBHf7smjy0K4oqzdWumd+r5/+6QO/vDda76MW5iug4PT7v86FoEkySIJft3XA0Ae6axhIvHrqwm793Nw=="
@@ -40,8 +43,8 @@
                             Texas</span>
                     </p>
                     <p class="text-white fw-500 ms-4 d-md-block d-none">
-               <i class="fa-solid fa-award  
- text-primary"></i>  #1 Choice in Highlands, Texas
+                        <i class="fa-solid fa-award  
+ text-primary"></i> #1 Choice in Highlands, Texas
                     </p>
                 </div>
                 <a href="tel:+1 (737) 207-0337" title="phone number" class="text-white fw-500"><i
@@ -139,7 +142,7 @@
         <div class="hero">
             <div class="container h-100">
 
-                <div class="d-flex flex-column justify-content-center h-75 hero-content">
+                <div data-aos="fade-down-right" class="d-flex flex-column justify-content-center h-75 hero-content">
                     <h1 class="text-white mb-4">Providing the Best <span class="text-white">Lawn Services</span> in
                         <span class="text-primary">Highlands</span>, Texas
                     </h1>
@@ -163,10 +166,10 @@
             </div>
             <img class="hero-img" src="/img/mowing-grass.jpg" alt="hero background of gardener">
             <div class="left-overlay"></div>
-           <div class="circle"></div>
+            <div data-aos="fade-right" class="circle"></div>
         </div>
 
-        <div class="features container">
+        <div data-aos="fade-up" class="features container">
             <div>
                 <i class="fa-solid fa-camera-retro"></i>
                 <h3>Picture-Perfect Lawns</h3>
@@ -187,70 +190,53 @@
         </div>
     </section>
 
-    <section class="problems">
+    <section class="problems py-4">
         <div class="container">
-            <h3 class="header">Ask Yourself, Are You Struggling With... </h3>
-
-            <div class="problems-row mt-4">
-                <div class="problems">
-                    <i class="fa-solid fa-sun-plant-wilt"></i>
-                    <h5>Uncontrolled Weed Growth</h5>
-                    <p>
-                        Stubborn weeds take over, making it difficult to restore your lawn's beauty.
-                    </p>
+            <div class="d-flex justify-content-between">
+                <div data-aos="fade-right" class="img-div col">
+                    <img src="/img/stressed-lawn.jpg" alt="stressed man in lawn">
                 </div>
+                <div data-aos="fade-left" class="info-div col">
+                    <div class="small-big-header">
+                        <p class="fs-16">Ask Yourself,</p>
+                        <h3>Are You facing this your Lawn?</h3>
+    
+                    </div>
+                    <ul class="problems-points">
+                        <li>Untidy and Overgrown Lawns</li>
+                        <li>Uncontrolled Weed Growth</li>
+                        <li>Thin and Patchy Grass</li>
+                        <li>Inaccurate Water Levels</li>
+                        <li>Damage from Pests</li>
+                        <li>Lack of Soil Nutrients</li>
+                    </ul>
 
-                <div class="problems">
-                    <i class="fa-solid fa-seedling"></i>
-                    <h5>Thin and Patchy Grass</h5>
-                    <p>
-                        Poor growth leads to thin and patchy grass, leaving your lawn looking lackluster.
-                    </p>
-                </div>
-
-                <div class="problems">
-                    <i class="fa-solid fa-water"></i>
-                    <h5>Inaccurate Water Levels</h5>
-                    <p>
-                        Inconsistent watering causes issues, affecting the health and appearance of your lawn.
-                    </p>
-                </div>
-
-                <div class="problems">
-                    <i class="fa-solid fa-mosquito"></i>
-                    <h5>Damage from Pests</h5>
-                    <p>
-                        Pest infestations harm your lawn, disrupting its growth and overall health.
-                    </p>
-                </div>
-
-                <div class="problems">
-                    <i class="fa-brands fa-nutritionix"></i>
-                    <h5>Lack of Soil Nutrients</h5>
-                    <p>
-                        Depleted soil nutrients starve your lawn, hindering its growth and vitality.
-                    </p>
-                </div>
-
-                <div class="problems">
-                    <i class="fa-solid fa-tree-city"></i>
-                    <h5>Untidy and Overgrown Lawns</h5>
-                    <p>
-                        Neglected lawns become overgrown and untidy, diminishing your property's appeal.
-                    </p>
+                    <a href="/cta.html" title="call to action" class="btn btn-lg btn-primary fw-500 px-4 mt-4 ">
+                        <i class="fa-solid fa-envelope-open-text me-2"></i> Let us help you
+                    </a>
                 </div>
             </div>
             <div class=" d-flex justify-content-center">
-                <a href="/cta.html" title="call to action" class="btn btn-lg btn-primary fw-500 px-4 mt-5 ">
-                    <i class="fa-solid fa-envelope-open-text me-2"></i> Let us help you
-                </a>
+               
             </div>
         </div>
     </section>
 
-    <section class="cta d-flex align-items-center justify-content-center">
+    <section class="cta d-flex align-items-center justify-content-center position-relative">
+        <div class="custom-shape-divider-top-1686548731">
+            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z" class="shape-fill"></path>
+            </svg>
+        </div>
+
+        <div class="custom-shape-divider-bottom-1686548668">
+            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z" class="shape-fill"></path>
+            </svg>
+        </div>
+
         <img class="cta-img" src="/img/cutting-grass.jpeg" alt="gardener-cutting-grass">
-        <div class="container text-center">
+        <div data-aos="fade-up" class="container text-center">
             <h2 class="text-white mb-5">Ready for a lawn makeover? Unlock your dream yard today. Schedule your
                 consultation and
                 transform your outdoor oasis!</h2>
@@ -260,7 +246,7 @@
         </div>
     </section>
 
-    <section id="ourServices" class="our-services mt-5">
+    <section id="ourServices" class="our-services mt-4">
         <div class="container">
             <h3 class="header">Our Services </h3>
             <div class="multiple-slides mt-4">
@@ -764,6 +750,12 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js"
         integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V"
         crossorigin="anonymous"></script>
+
+    <!-- Scroll Animation -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
 
     <script src="/js/index.js"></script>
 </body>

@@ -128,40 +128,83 @@
     }
 
     .problems {
-        .problems-row {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 3rem;
-
-            @media (max-width: 992px) {
-                grid-template-columns: repeat(2, 1fr);
+        .img-div{
+            max-height: 450px;
+            padding: 0rem 5rem 3rem 1rem;
+            img{
+                height: 100%;
+                width: 100%;
+                border-radius: 20px;
+                object-fit: cover;
             }
+        }
 
-            @media (max-width: 768px) {
-                grid-template-columns: repeat(1, 1fr);
-            }
-
-            .problems {
-                padding: 2rem;
-                border-radius: 30px;
-
-                text-align: center;
-
-                i {
-                    font-size: 3rem;
-                    color: $primary;
-                    margin-bottom: 0.9rem;
-                }
-
-                h5 {
-                    font-size: 1.35rem;
-                    font-weight: 600;
-                }
-
-                p {
-                    font-size: 0.9rem;
+        .info-div{
+            padding-left: 3rem;
+            .problems-points {
+                li{
+                    color: #525050;
+                    font-size: 16px;
+                    margin-bottom: 0.6rem;
                 }
             }
+        }
+    }
+
+    .cta {
+        height: 30rem;
+        position: relative;
+
+        .cta-img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: brightness(30%);
+            z-index: -1;
+        }
+
+        .custom-shape-divider-bottom-1686548668 {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            overflow: hidden;
+            line-height: 0;
+        }
+        
+        .custom-shape-divider-bottom-1686548668 svg {
+            position: relative;
+            display: block;
+            width: calc(162% + 1.3px);
+            height: 62px;
+        }
+        
+        .custom-shape-divider-bottom-1686548668 .shape-fill {
+            fill: #f8f8f8;
+        }
+
+        .custom-shape-divider-top-1686548731 {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            overflow: hidden;
+            line-height: 0;
+            transform: rotate(180deg);
+        }
+        
+        .custom-shape-divider-top-1686548731 svg {
+            position: relative;
+            display: block;
+            width: calc(162% + 1.3px);
+            height: 62px;
+        }
+        
+        .custom-shape-divider-top-1686548731 .shape-fill {
+            fill: #f8f8f8;
         }
     }
 
@@ -231,22 +274,6 @@
                     animation: fade-in 0.8s ease-in-out;
                 }
             }
-        }
-    }
-
-    .cta {
-        height: 30rem;
-        position: relative;
-
-        .cta-img {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            filter: brightness(30%);
-            z-index: -1;
         }
     }
 

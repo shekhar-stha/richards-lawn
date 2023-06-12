@@ -12206,7 +12206,7 @@ footer .footer-col .text-info p a {
 }
 
 .small-big-header p {
-  font-size: 22px;
+  font-size: 18px;
   font-weight: 500;
   color: #6b9731;
   text-shadow: 1px 1px 6px rgba(121, 121, 121, 0.2);
@@ -12350,37 +12350,73 @@ section {
   font-size: 0.9rem;
 }
 
-.problems .problems-row {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 3rem;
+.problems .img-div {
+  max-height: 450px;
+  padding: 0rem 5rem 3rem 1rem;
 }
-@media (max-width: 992px) {
-  .problems .problems-row {
-    grid-template-columns: repeat(2, 1fr);
-  }
+.problems .img-div img {
+  height: 100%;
+  width: 100%;
+  border-radius: 20px;
+  object-fit: cover;
 }
-@media (max-width: 768px) {
-  .problems .problems-row {
-    grid-template-columns: repeat(1, 1fr);
-  }
+.problems .info-div {
+  padding-left: 3rem;
 }
-.problems .problems-row .problems {
-  padding: 2rem;
-  border-radius: 30px;
-  text-align: center;
+.problems .info-div .problems-points li {
+  color: #525050;
+  font-size: 16px;
+  margin-bottom: 0.6rem;
 }
-.problems .problems-row .problems i {
-  font-size: 3rem;
-  color: #85b449;
-  margin-bottom: 0.9rem;
+
+.cta {
+  height: 30rem;
+  position: relative;
 }
-.problems .problems-row .problems h5, .problems .problems-row .problems .h5 {
-  font-size: 1.35rem;
-  font-weight: 600;
+.cta .cta-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(30%);
+  z-index: -1;
 }
-.problems .problems-row .problems p {
-  font-size: 0.9rem;
+.cta .custom-shape-divider-bottom-1686548668 {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+}
+.cta .custom-shape-divider-bottom-1686548668 svg {
+  position: relative;
+  display: block;
+  width: calc(162% + 1.3px);
+  height: 62px;
+}
+.cta .custom-shape-divider-bottom-1686548668 .shape-fill {
+  fill: #f8f8f8;
+}
+.cta .custom-shape-divider-top-1686548731 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  transform: rotate(180deg);
+}
+.cta .custom-shape-divider-top-1686548731 svg {
+  position: relative;
+  display: block;
+  width: calc(162% + 1.3px);
+  height: 62px;
+}
+.cta .custom-shape-divider-top-1686548731 .shape-fill {
+  fill: #f8f8f8;
 }
 
 .our-services .multiple-slides .service-div {
@@ -12435,21 +12471,6 @@ section {
 .our-services .multiple-slides .service-div:hover p.hidden-information {
   display: block;
   animation: fade-in 0.8s ease-in-out;
-}
-
-.cta {
-  height: 30rem;
-  position: relative;
-}
-.cta .cta-img {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  filter: brightness(30%);
-  z-index: -1;
 }
 
 .why-us .why-us-row {
