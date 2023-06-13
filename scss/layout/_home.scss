@@ -169,7 +169,8 @@
                 height: 90%;
                 width: 90%;
                 border: 6px solid $primary;
-                border-radius: 20px;
+                background-color: $primary;
+                border-radius: 50% 20% / 10% 40%;
                 z-index: -1;
 
                 @media (max-width: 992px) {
@@ -180,11 +181,10 @@
                 max-height: 400px;
                 height: auto;
                 width: 100%;
-                border-radius: 20px;
+                border-radius: 50% 20% / 10% 40%;
                 object-fit: cover;
                 @media (max-width: 992px) {
                     max-height: 300px;
-                    border-radius: 50% 20% / 10% 40%;
                 }
             }
         }
@@ -201,6 +201,8 @@
                     color: #525050;
                     font-size: 16px;
                     margin-bottom: 0.6rem;
+                    list-style-type: "❌";
+                    padding-inline-start: 1ch;
                 }
             }
         }
@@ -382,6 +384,67 @@
             }
         }
     }
+
+    .our-promise {
+        .promise-row {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 3rem;
+
+            @media (max-width: 992px) {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            @media (max-width: 768px) {
+                grid-template-columns: repeat(1, 1fr);
+            }
+
+            .promise {
+                padding: 2rem;
+                border-radius: 30px;
+
+                text-align: center;
+
+                i {
+                    font-size: 3rem;
+                    color: $primary;
+                    margin-bottom: 0.9rem;
+                }
+
+                h5 {
+                    font-size: 1.35rem;
+                    font-weight: 600;
+                }
+
+                p {
+                    font-size: 0.9rem;
+                }
+            }
+        }
+
+        .custom-shape-divider-bottom-1686673657 {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            overflow: hidden;
+            line-height: 0;
+            z-index: -1;
+        }
+        
+        .custom-shape-divider-bottom-1686673657 svg {
+            position: relative;
+            display: block;
+            width: calc(274% + 1.3px);
+            height: 377px;
+        }
+        
+        .custom-shape-divider-bottom-1686673657 .shape-fill {
+            fill: #E7F5E8;
+        }
+    }
+
+
 
     .cta-form{
         .img-div{

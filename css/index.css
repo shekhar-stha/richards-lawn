@@ -12400,7 +12400,8 @@ section {
   height: 90%;
   width: 90%;
   border: 6px solid #85b449;
-  border-radius: 20px;
+  background-color: #85b449;
+  border-radius: 50% 20%/10% 40%;
   z-index: -1;
 }
 @media (max-width: 992px) {
@@ -12412,13 +12413,12 @@ section {
   max-height: 400px;
   height: auto;
   width: 100%;
-  border-radius: 20px;
+  border-radius: 50% 20%/10% 40%;
   object-fit: cover;
 }
 @media (max-width: 992px) {
   .problems .img-div img {
     max-height: 300px;
-    border-radius: 50% 20%/10% 40%;
   }
 }
 .problems .info-div {
@@ -12434,6 +12434,8 @@ section {
   color: #525050;
   font-size: 16px;
   margin-bottom: 0.6rem;
+  list-style-type: "❌";
+  padding-inline-start: 1ch;
 }
 
 .cta {
@@ -12582,6 +12584,57 @@ section {
   object-fit: cover;
   border-radius: 50% 20%/10% 40%;
   filter: brightness(90%);
+}
+
+.our-promise .promise-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3rem;
+}
+@media (max-width: 992px) {
+  .our-promise .promise-row {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 768px) {
+  .our-promise .promise-row {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+.our-promise .promise-row .promise {
+  padding: 2rem;
+  border-radius: 30px;
+  text-align: center;
+}
+.our-promise .promise-row .promise i {
+  font-size: 3rem;
+  color: #85b449;
+  margin-bottom: 0.9rem;
+}
+.our-promise .promise-row .promise h5, .our-promise .promise-row .promise .h5 {
+  font-size: 1.35rem;
+  font-weight: 600;
+}
+.our-promise .promise-row .promise p {
+  font-size: 0.9rem;
+}
+.our-promise .custom-shape-divider-bottom-1686673657 {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  z-index: -1;
+}
+.our-promise .custom-shape-divider-bottom-1686673657 svg {
+  position: relative;
+  display: block;
+  width: calc(274% + 1.3px);
+  height: 377px;
+}
+.our-promise .custom-shape-divider-bottom-1686673657 .shape-fill {
+  fill: #E7F5E8;
 }
 
 .cta-form .img-div {
@@ -12870,9 +12923,8 @@ section {
 }
 .contact-section__img img {
   width: 100%;
-  border-radius: 10px;
   max-height: 306px;
-  min-height: 230px;
+  min-height: 300px;
   object-fit: cover;
 }
 .contact-section__row {
