@@ -3,10 +3,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Petrona:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&display=swap");
 
 /* Color Set */
-$primary: #85b449;
-$secondary: #e29821;
+$primary: #0e9208;
+$secondary: #f09133;
 $warning: #df3b2e;
-$success: #6b9731;
+$success: #2d9c0c;
 $danger: #ff4d00;
 $black: #302c2c;
 $white: #fcfef7;
@@ -96,7 +96,7 @@ $grid-breakpoints: (
     font-size: 28px;
 }
 
-.lh-25{
+.lh-25 {
     line-height: 25px;
 }
 
@@ -104,22 +104,34 @@ p {
     margin: 0px;
 }
 
-.btn{
+.btn {
     padding-top: 9px;
     padding-bottom: 9px;
 }
 
 
-.btn-primary{
+.btn-primary {
     color: $white;
     font-weight: 500;
     border: 2px solid $primary;
+
+    &:hover {
+        color: $primary;
+        background-color: transparent;
+        border: 2px solid $primary;
+    }
 }
 
-.btn-primary:hover{
-    color: $primary;
-    background-color: transparent;
-    border: 2px solid $primary;
+.btn-secondary {
+    color: $white;
+    font-weight: 500;
+    border: 2px solid $secondary;
+
+    &:hover {
+        color: $secondary;
+        background-color: transparent;
+        border: 2px solid $secondary;
+    }
 }
 
 .btn-warning {
@@ -167,6 +179,6 @@ body {
     background-color: #f8f8f8;
 }
 
-section{
+section {
     overflow: hidden;
 }

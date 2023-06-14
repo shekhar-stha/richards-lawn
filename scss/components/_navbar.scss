@@ -19,6 +19,7 @@ nav {
         img {
             width: 15rem;
             object-fit: contain;
+            filter: brightness(90%);
 
             @media (max-width: 576px) {
                 width: 8rem;
