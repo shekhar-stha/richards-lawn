@@ -685,6 +685,8 @@
             height: 80%;
             width: 80%;
             margin-left: 1.5rem;
+            overflow: hidden;
+            border-radius: 50% 20% / 10% 40%;
 
             @media (max-width: 992px) {
                 height: 100%;
@@ -696,23 +698,15 @@
             img {
                 object-fit: cover;
                 max-height: 400px;
+                border-radius: 50% 20% / 10% 40%;
 
                 @media (max-width: 992px) {
                     max-height: 300px;
                 }
-            }
 
-            .card-inner {
-                width: inherit;
-                height: inherit;
-                background: rgba(255, 255, 255, .05);
-                box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
-                backdrop-filter: blur(10px);
-                border-radius: 8px;
-            }
-
-            .card:hover {
-                transform: scale(1.04);
+                &:hover{
+                    transform: scale(1.04);
+                }
             }
         }
     }
